@@ -44,6 +44,6 @@ World info, Lorebooks機能を追加する。
 
 不明。SillyTavernのChat Vectorization相当か？  
 
-## [Text Gen Web UI/long_term_memory(開発停止)](https://github.com/wawawario2/long_term_memory)
+## [Text Gen Web UI/long_term_memory](https://github.com/wawawario2/long_term_memory)（開発停止）
   
 不明。SillyTavernのChat Vectorization相当か？  
