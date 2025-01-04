@@ -19,6 +19,9 @@
       subMaxLevel: 2,
       loadNavbar: false,
       auto2top: true,
+      requestHeaders: {
+        'cache-control': 'max-age=0',
+      },
       timeUpdater: {
         text: "<div align='right'>last update time: {docsify-updated}</div>",
         formatUpdated: "{YYYY}/{MM}/{DD}",
