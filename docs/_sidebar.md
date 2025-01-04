@@ -1,4 +1,6 @@
 <!-- docs/_sidebar.md -->
 
 * [Home](/)
-* [ローカルLLM関連のメモ](memo_lllm.md)
+* ローカルLLM
+  * [ローカルLLMのメモ](llm\lllm_memo.md)
+  * [ローカルLLMを使ったチャット](llm\lllm_chat.md)

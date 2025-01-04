@@ -1,4 +1,4 @@
-# ローカルLLM関連のメモ
+# ローカルLLMのメモ
 
 [ChatGPT](https://chatgpt.com/)や[Copilot](https://copilot.microsoft.com/)の様な生成AIをクラウドではなくローカルで使う方法のメモ。
 
