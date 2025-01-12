@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.789975666203">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.6.0">
+
+    <!-- Primary Meta Tags -->
+    <title>ローカルチャットAIのメモ</title>
+    <meta name="title" content="ローカルチャットAIのメモ">
+    <meta name="description" content="ChatGPT や Copilot の様なチャットAIをクラウドではなくローカルで使う方法のメモ。">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://orishiki.com/gai/lcbai_memo/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://orishiki.com/gai/lcbai_memo/">
+    <meta property="og:title" content="ローカルチャットAIのメモ">
+    <meta property="og:description" content="ChatGPT や Copilot の様なチャットAIをクラウドではなくローカルで使う方法のメモ。">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://orishiki.com/gai/lcbai_memo/">
+    <meta property="twitter:title" content="ローカルチャットAIのメモ">
+    <meta property="twitter:description" content="ChatGPT や Copilot の様なチャットAIをクラウドではなくローカルで使う方法のメモ。">
+
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../resources/css/retype.css?v=3.6.0.789975666203" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.789975666203" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.789975666203" data-turbo-eval="false" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">orishiki.com</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="ローカルチャットaiのメモ" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ローカルチャットaiのメモ">#</doc-anchor-trigger>
+        <span>ローカルチャットAIのメモ</span>
+    </h1>
+</doc-anchor-target>
+<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
+    <div class="flex items-center shrink-0">Published&nbsp;<span>2025-01-04</span></div>
+</div>
+
+<p><a href="https://chatgpt.com/">ChatGPT</a>や<a href="https://copilot.microsoft.com/">Copilot</a>の様なチャットAIをクラウドではなくローカルで使う方法のメモ。</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Warning</h5>
+<p>2025年現在、NVIDIA GeForce/AMD RadeonシリーズのGPUを使っているのであれば、Windowsでも実用的な速度でチャットができる。Google検索では「Radeonはチャットに使えない」、「ROCmはLinuxにしか対応していない」等の古い情報ばかりがヒットするので参考にならない。生成AI関連の情報はすぐに賞味期限が切れるので、2024年前半以前の情報は無視してよい。</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="メリット">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#メリット">#</doc-anchor-trigger>
+        <span>メリット</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><p>無料</p>
+<p>クラウド生成AIでは一般的に無料版では機能制限があり、高機能なモデルにアクセスするには追加料金が必要になる。例えば、ChatGPT Plusは$20/月、Proは$200/月等。ローカルで動かせば追加料金がかからない。</p>
+</li>
+<li><p>制限なし</p>
+<p>クラウド生成AIでは一般的に検閲済みのモデルしか使用できない。違法、有害、倫理的・政治的に不適切と判断された入力は拒否されてしまう。これでは犯罪小説も、ダークファンタジーも書けない。ローカルで無検閲モデルを動かせば制限はかからない。</p>
+</li>
+<li><p>プライベート</p>
+<p>クラウド生成AIでは一般的に無料版では入力内容がモデルの学習に使用される。この為、個人情報やセンシティブな内容の扱いには向かない。ローカルで動かせばデータは外部に出て行かない。</p>
+</li>
+</ul>
+<doc-anchor-target id="使い道">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#使い道">#</doc-anchor-trigger>
+        <span>使い道</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><p>RP（ロールプレイング）チャット</p>
+<p>自分と相手の名前、容姿(アイコン、立ち絵)、性格などを細かく設定したうえで、チャットを行う。クラウドでも疑似的なパートナー、恋人とのチャットは人気が高く、サービスも多い。マイクで音声入力（STT）→文脈を判断し立ち絵を変更→テキスト読み上げで音声出力（TTS）などの機能が使えるものもある。</p>
+</li>
+<li><p>小説のアイデア出し・執筆補助</p>
+<p>舞台設定やキャラクターを指示したうえで小説のあらすじを生成させる、途中まで書いた文章の続きをそのまま書かせるなど、共同執筆相手として使える。執筆向けに学習されたモデルであれば、中世ファンタジー、剣と魔法の世界などのお約束的な舞台設定は得意なので、細かく指定が不要で手間がかからない。</p>
+</li>
+<li><p>テキストアドベンチャーゲーム</p>
+<p>「あなたはドラゴンの巣穴の前に立っている。どうしますか？ 1) 入る　2) 逃げ帰る 3) 入口を埋める」の様な、AIと交互に対話を繰り返す、いわゆるゲームブック的な遊びができる。TRPGのGM役にする、NPCを生成させる、D&amp;D 5e 形式でキャラクターシートを作らせる事もできる。</p>
+</li>
+</ul>
+<doc-anchor-target id="用意するもの">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#用意するもの">#</doc-anchor-trigger>
+        <span>用意するもの</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><p>言語モデル（LLM）</p>
+<p><a href="https://huggingface.co/">Hugging Face</a>から用途に合ったモデルを入手する。日本語の学習有無、検閲の有無、モデルの種類(Base、Instruct等)に注意。ローカルで動かす場合は、パラメータ数8B～12Bで、Q4程度に量子化されたものが扱いやすい（GPUのVRAMにモデル全体がロードできるととても速い）。ソフトによってはモデルの検索、ダウンロード機能を備えるものもある。</p>
+</li>
+<li><p>クライアント/サーバーソフト</p>
+<p>両方の機能を持つ自己完結タイプ、クライアント機能だけ持つタイプ、自己完結タイプ＋サーバー機能を持つものがある。自己完結タイプ以外ではOpenAI互換のAPI機能を持つものが主流で、色々組み合わせて使える。</p>
+</li>
+</ul>
+<doc-anchor-target id="ソフトの例">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ソフトの例">#</doc-anchor-trigger>
+        <span>ソフトの例</span>
+    </h2>
+</doc-anchor-target>
+<p>大きく以下の2タイプに分けられるが、両方の機能を持つものや、執筆向けなど特定の機能に特化したものもある。</p>
+<ul>
+<li><p>RPチャット向け</p>
+<p>Persona（ユーザーのアバター）、Character（チャット相手のアバター）、World Info（世界設定）、キャラクターカードのImport/Export等の機能を持ち、背景画像や立ち絵の変更機能を持つものもある。</p>
+</li>
+<li><p>AIアシスタント向け</p>
+<p>ChatGPTクローンのUIを持ち、Instruction UIが基本で、RAGなどの付加機能がある。</p>
+</li>
+</ul>
+<doc-anchor-target id="rpチャット向け">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#rpチャット向け">#</doc-anchor-trigger>
+        <span>RPチャット向け</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><p><a href="https://github.com/SillyTavern/SillyTavern">SillyTavern</a> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
+    <span><svg xmlns="http://www.w3.org/2000/svg" class="mb-px inline-flex mr-2" width="18" height="18" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="m12 20.703.343.667a.748.748 0 0 1-.686 0l-.003-.002-.007-.003-.025-.013a31.138 31.138 0 0 1-5.233-3.576C3.8 15.573 1 12.332 1 8.514v-.001C1 5.053 3.829 2.5 6.736 2.5 9.03 2.5 10.881 3.726 12 5.605 13.12 3.726 14.97 2.5 17.264 2.5 20.17 2.5 23 5.052 23 8.514c0 3.818-2.801 7.06-5.389 9.262a31.148 31.148 0 0 1-5.233 3.576l-.025.013-.007.003-.002.001ZM6.736 4C4.657 4 2.5 5.88 2.5 8.514c0 3.107 2.324 5.96 4.861 8.12a29.655 29.655 0 0 0 4.566 3.175l.073.041.073-.04c.271-.153.661-.38 1.13-.674.94-.588 2.19-1.441 3.436-2.502 2.537-2.16 4.861-5.013 4.861-8.12C21.5 5.88 19.343 4 17.264 4c-2.106 0-3.801 1.389-4.553 3.643a.751.751 0 0 1-1.422 0C10.537 5.389 8.841 4 6.736 4Z"/></g></svg></span>
+    <span>オススメ</span>
+</span></p>
+<p>クライアント機能のみ。非常に多機能でユーザーも多い。クライアント機能のみなので別途APIサーバーが必要。RPチャット向けの基本機能に加えて複数キャラクターチャットや立ち絵の自動変更、ヴィジュアルノベルモード等々、多数のユニークな機能がある。Assistant、Roleplay、Writing、Text Adventure等の用途向けシステムプロンプトも用意されている。（r/SillyTavernAIのメンバーは32K）</p>
+</li>
+<li><p><a href="https://risuai.net/">RisuAI</a></p>
+<p>クライアント機能のみ。非常に多機能。公開されているキャラクターカードがほぼハングルなので、韓国で人気なのかも？（r/RisuAIのメンバーは359）</p>
+</li>
+<li><p><a href="https://backyard.ai/">Backyard AI/faraday</a></p>
+<p>自己完結タイプ。（r/BackyardAIのメンバーは2K）</p>
+</li>
+</ul>
+<doc-anchor-target id="aiアシスタント向け">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#aiアシスタント向け">#</doc-anchor-trigger>
+        <span>AIアシスタント向け</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><p><a href="https://lmstudio.ai/">LM Studio</a>  <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
+    <span><svg xmlns="http://www.w3.org/2000/svg" class="mb-px inline-flex mr-2" width="18" height="18" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="m12 20.703.343.667a.748.748 0 0 1-.686 0l-.003-.002-.007-.003-.025-.013a31.138 31.138 0 0 1-5.233-3.576C3.8 15.573 1 12.332 1 8.514v-.001C1 5.053 3.829 2.5 6.736 2.5 9.03 2.5 10.881 3.726 12 5.605 13.12 3.726 14.97 2.5 17.264 2.5 20.17 2.5 23 5.052 23 8.514c0 3.818-2.801 7.06-5.389 9.262a31.148 31.148 0 0 1-5.233 3.576l-.025.013-.007.003-.002.001ZM6.736 4C4.657 4 2.5 5.88 2.5 8.514c0 3.107 2.324 5.96 4.861 8.12a29.655 29.655 0 0 0 4.566 3.175l.073.041.073-.04c.271-.153.661-.38 1.13-.674.94-.588 2.19-1.441 3.436-2.502 2.537-2.16 4.861-5.013 4.861-8.12C21.5 5.88 19.343 4 17.264 4c-2.106 0-3.801 1.389-4.553 3.643a.751.751 0 0 1-1.422 0C10.537 5.389 8.841 4 6.736 4Z"/></g></svg></span>
+    <span>オススメ</span>
+</span></p>
+<p>自己完結タイプ＋APIサーバー機能あり。単体でHugging Faceからモデルを検索・ダウンロードできて、ChatGPT的なUIでチャットができて、他のソフト向けにAPIサーバー機能もあるので、はじめて使うのにおすすめのソフト。（r/LMStudioのメンバーは2.1K）</p>
+</li>
+<li><p><a href="https://openwebui.com/">Open Webui</a></p>
+<p>クライアント機能のみ。UIはChatGPTクローン。クセがないのでUIだけほしい場合に便利。（r/OpenWebUIのメンバーは2.7K）</p>
+</li>
+<li><p><a href="https://github.com/LostRuins/koboldcpp">KoboldCpp</a></p>
+<p>自己完結タイプ＋APIサーバー機能あり。Instruct、Chat、Story、Adventure等の用途向けシステムプロンプトも用意されている。Instruction UIもあるが、UIがChatGPTクローンではない。UserとAIに名前が付けられるのでRPチャットもできなくはないが、Personaなし、Characterなしなので、RPチャット機能は弱い。(r/KoboldAIのメンバーは12K)</p>
+</li>
+<li><p><a href="https://github.com/oobabooga/text-generation-webui">Text generation web UI</a></p>
+<p>自己完結タイプ＋APIサーバー機能あり。Character機能はあるが、Personaは一つだけ、World Infoもないので、RPチャット機能は弱い。他のソフトはモデルロード時のデフォルトコンテキスト長を4K程度に制限しているが、これはモデルの最大値に設定しているので、Mistral AI系モデルではコンテキスト長1Mでロードしようとしてエラーを出しがち。（r/Oobaboogaのメンバーは15K）</p>
+</li>
+<li><p><a href="https://anythingllm.com/">AnythingLLM</a></p>
+<p>自己完結タイプ+クライアント機能あり。UIはLM Studioに近いがAPIサーバー機能はない。（r/anythingllmのメンバーは161人）</p>
+</li>
+<li><p><a href="https://ollama.com/">Ollama</a></p>
+<p>自己完結タイプ＋サーバー機能あり。別途UIを立ち上げずにターミナル上で入出力を行う。登録したモデルを明示的にrmコマンドで削除しない限り、元のGGUFモデルファイルとは別に内部ファイルを保持し続けるので注意。</p>
+</li>
+</ul>
+<doc-anchor-target id="執筆向け">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#執筆向け">#</doc-anchor-trigger>
+        <span>執筆向け</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><p><a href="https://github.com/Zuntan03/EasyNovelAssistant">EasyNovelAssistant</a></p>
+<p>チャットではなく、指定したシナリオに従って小説を生成する。サンプルはNSFWなものが多いが、もちろんSFWな話も生成できる。</p>
+</li>
+</ul>
+<doc-anchor-target id="モデルの例">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#モデルの例">#</doc-anchor-trigger>
+        <span>モデルの例</span>
+    </h2>
+</doc-anchor-target>
+<p><a href="https://local-llm.memo.wiki/d/%a4%aa%a4%b9%a4%b9%a4%e1%a4%ce%c6%fc%cb%dc%b8%ec%c2%d0%b1%fe%a5%ed%a1%bc%a5%ab%a5%eb%c2%e7%b5%ac%cc%cf%b8%c0%b8%ec%a5%e2%a5%c7%a5%eb#content_1_1_1">日本語ローカルLLM関連のメモWiki</a>が詳しい。</p>
+<p>パラメータ数8B～12B程度、量子化はQ4以上がおすすめで、それより低いとAIの頭が目に見えて悪くなっていく。
+基本的にモデルのサイズが大きければ大きいほどAIの頭は良くなるが、GPUのVRAMにモデルが収まらない場合、メインメモリに振り分けられて、処理速度がガタ落ち（1文字/秒とか）になるので、PC環境と相談して決める。</p>
+<ul>
+<li><a href="https://huggingface.co/bartowski/phi-4-GGUF">bartowski/phi-4-GGUF</a></li>
+<li><a href="https://huggingface.co/bartowski/gemma-2-9b-it-GGUF">bartowski/gemma-2-9b-it-GGUF</a></li>
+<li><a href="https://huggingface.co/QuantFactory/Mistral-Nemo-Japanese-Instruct-2408-GGUF">QuantFactory/Mistral-Nemo-Japanese-Instruct-2408-GGUF</a></li>
+</ul>
+<p>辺りは安定していて使いやすい。</p>
+<p>また、EasyNovelAssistantには日本語での執筆に適したモデルをダウンロードする機能があるのでSFW/NSFW共に参考にできる。</p>
+<doc-anchor-target id="ローカルチャットaiの速度">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ローカルチャットaiの速度">#</doc-anchor-trigger>
+        <span>ローカルチャットAIの速度</span>
+    </h2>
+</doc-anchor-target>
+<p>600トークンの英文を<a href="mailto:ministral-8b-instruct-2410@q8">ministral-8b-instruct-2410@q8</a>_0に翻訳させた場合の例（RX7900XT）</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="compact">
+<thead>
+<tr>
+<th>ソフト</th>
+<th>速度(T/S)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LM Studio(ROCm)</td>
+<td>65.56</td>
+</tr>
+<tr>
+<td>LM Studio(Vulkan)</td>
+<td>67.32</td>
+</tr>
+<tr>
+<td>KoboldCpp(ROCm)</td>
+<td>53.49</td>
+</tr>
+<tr>
+<td>KoboldCpp(Vulkan)</td>
+<td>59.01</td>
+</tr>
+<tr>
+<td>LM Studio(ROCm)+SillyTavern</td>
+<td>62.15</td>
+</tr>
+<tr>
+<td>LM Studio(Vulkan)+SillyTavern</td>
+<td>64.73</td>
+</tr>
+<tr>
+<td>KoboldCpp(ROCm)+SillyTavern</td>
+<td>59.03</td>
+</tr>
+<tr>
+<td>KoboldCpp(Vulkan)+SillyTavern</td>
+<td>59.15</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="ローカルチャットaiを使ったrpチャット">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ローカルチャットaiを使ったrpチャット">#</doc-anchor-trigger>
+        <span>ローカルチャットAIを使ったRPチャット</span>
+    </h2>
+</doc-anchor-target>
+<p>チャットはクラウドでもロカールでも生成AIの用途として人気が高い。キャラクターの画像に性格等のメタデータが埋め込まれたキャラクターカードが公開されていて、自分でキャラクターを作らなくても手軽に楽しめる。</p>
+<p>どのモデルでもチャットはそれなりにこなせるが、RP用途にチューニングしたモデルも多数公開されている。</p>
+<p>コンテキスト長には注意が必要で、コンテキスト長を超えた会話は忘れられてしまう。配布されているキャラクターカードによっては、埋め込まれた設定だけで4Kに近いものもあり、この場合は最大コンテキスト長が4Kのモデルでは上手く扱えない。</p>
+<p>最大コンテキスト長の例</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="compact">
+<thead>
+<tr>
+<th>Model</th>
+<th>コンテキスト長(token)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mistral-Nemo-Japanese-Instruct-2408/13B</td>
+<td>1024000</td>
+</tr>
+<tr>
+<td>phi-4/14B</td>
+<td>16384</td>
+</tr>
+<tr>
+<td>llm-jp-3-13b-instruct/13B</td>
+<td>4096</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>モデル自体のコンテキスト長だけでなく、モデルのロード時にもコンテキスト長を制限する方向では設定ができる。できる限り大きくしたいが、大きくするだけメモリ使用量が増えるので、PC環境と相談して決める。</p>
+<doc-anchor-target id="チャット例">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#チャット例">#</doc-anchor-trigger>
+        <span>チャット例</span>
+    </h3>
+</doc-anchor-target>
+<doc-panels>
+   <doc-panel id="phi-4-14b" collapsed>
+       <template #title>phi-4/14B</template>
+<ul>
+<li><p><code v-pre>Assistant</code>
+あなたをサポートするのが私の役目です。私が力になれることであれば、何でも言って下さい。</p>
+</li>
+<li><p><code v-pre>User</code>
+おはよう</p>
+</li>
+<li><p><code v-pre>Assistant</code>
+おはようございます！朝日が窓から差し込む中、心地良い空気に包まれて目覚めるのはどんな感じですか？あなたをサポートする準備はできていますよ。今日一日、何をしたいと思っていますか？</p>
+</li>
+<li><p><code v-pre>User</code>
+一日の始まりにふさわしい、前向きになれる名言を一つ教えて。</p>
+</li>
+<li><p><code v-pre>Assistant</code>
+もちろんです！「成功は小さなことの積み重ねである」という言葉があります。この言葉は、大きな目標を達成するためには、日々の小さな努力や選択が非常に重要だと教えてくれます。一歩ずつ前進し続けることで、やがて大きな変化を実感することができるのです。</p>
+<p>この名言は、今日から始められる小さな行動に意味を見出す励ましとして活用できます。例えば、朝のルーティンや仕事のタスクへの取り組み方においても、一つ一つの小さな成功を積み重ねることが大切です。</p>
+<p>あなたは今日、どんな小さな目標を設定していますか？それらを達成するために、私がサポートできることがあればお手伝いしますよ。</p>
+</li>
+<li><p><code v-pre>User</code>
+朝食のおすすめはある？</p>
+</li>
+<li><p><code v-pre>Assistant</code>
+もちろんです！エネルギッシュな一日を始めるために、栄養バランスが取れていて美味しい朝食のおすすめはこちらです。</p>
+<p><strong>オーバーナイト・オートミール</strong></p>
+<p>材料:</p>
+<ul>
+<li>オートミール（大さじ4）</li>
+<li>プレーンヨーグルトまたはアーモンドミルク（カップ1）</li>
+<li>砂糖またはメープルシロップ（小さじ1、お好みで）</li>
+<li>塩（ひとつまみ）</li>
+</ul>
+<p>トッピング:</p>
+<ul>
+<li>バナナスライス</li>
+<li>乾燥ベリー（カップ1/2）</li>
+<li>シード類（チアシードやフレンチドレッシング、好きなものを少々）</li>
+<li>新鮮なハーブ（例：バジルやパセリ）</li>
+</ul>
+<p>作り方:</p>
+<ol>
+<li>夜になる前に、オートミールと選んだ乳製品または植物性飲料を混ぜ合わせます。砂糖またはメープルシロップと塩も加えてよくかき混ぜます。</li>
+<li>すべての材料が均一に混ざったら、密閉できる容器に移し替え、冷蔵庫で一晩寝かせます。</li>
+</ol>
+<p>朝起きたら、トッピングを追加して完成です。バナナやベリーはフレッシュさと自然な甘みを提供し、シード類は食感のアクセントになります。このオーバーナイト・オートミールは、忙しい朝でも簡単に準備できるのが魅力です。</p>
+<p>他にも、あなたの好みや食材に合わせてアレンジすることができます。例えば、ナッツを加えたり、スパイス（シナモンやクローブ）を振りかけることもおすすめです。</p>
+<p>朝食に何を選ぶかは、一日のエネルギー源になる大切な時間です。このオプションが気に入っていただけたら嬉しいです！他にもお手伝いできることがあれば教えてくださいね。</p>
+</li>
+</ul>
+   </doc-panel>
+   <doc-panel id="mistral-nemo-japanese-instruct-2408-13b" collapsed>
+       <template #title>Mistral-Nemo-Japanese-Instruct-2408/13B</template>
+<ul>
+<li><p><code v-pre>Assistant</code>
+あなたをサポートするのが私の役目です。私が力になれることであれば、何でも言って下さい。</p>
+</li>
+<li><p><code v-pre>User</code>
+おはよう</p>
+</li>
+<li><p><code v-pre>Assistant</code>
+おはようございます！今日も素晴らしい一日になりますように。何かお手伝いできることはありますか？朝のコーヒーはもう淹れましたか？それとも、今日は特別な計画がありますか？どんなことでもお話しくださいね。</p>
+</li>
+<li><p><code v-pre>User</code>
+一日の始まりにふさわしい、前向きになれる名言を一つ教えて。</p>
+</li>
+<li><p><code v-pre>Assistant</code>
+もちろんです！ここに一日の始まりにふさわしい名言があります。</p>
+<p>「今日という日は、あなたが描くキャンバスです。どんな色で塗りたく、どんな物語を描きたいかは、あなた次第です。」</p>
+<p>この言葉が、あなたの一日を前向きにし、素晴らしいスタートを切る手助けになれれば嬉しいです。何か他にお手伝いできることがあれば教えてくださいね。</p>
+</li>
+<li><p><code v-pre>User</code>: 朝食のおすすめはある？</p>
+</li>
+<li><p><code v-pre>Assistant</code>: もちろん、朝食は一日のエネルギーをチャージする大切な時間です！いくつかのおすすめをご紹介しますね。</p>
+<ol>
+<li><p>オートミールとフルーツ:</p>
+<ul>
+<li>温かいオートミールに新鮮なベリー類やバナナ、リンゴなどのフルーツをトッピングして。蜂蜜やシナモンを加えるとさらに美味しくなります。</li>
+</ul>
+</li>
+<li><p>ヨーグルトとグラノーラ:</p>
+<ul>
+<li>ギリシャヨーグルトにグラノーラとハチミツ、そしてお好みのフルーツを添えて。食感と風味が楽しめる一品です。</li>
+</ul>
+</li>
+<li><p>アボカドトースト:</p>
+<ul>
+<li>全粒粉のパンに熟れたアボカドを塗り、軽く塩と胡椒で味付けしてからオーブンで焼きます。お好みでポーチドエッグやトマトスライスを加えるとさらに美味しくなります。</li>
+</ul>
+</li>
+<li><p>スムージー:</p>
+<ul>
+<li>ほうれん草、バナナ、ベリー類、アーモンドミルクなどをブレンドして、栄養たっぷりのスムージーに。これで手軽にビタミンやミネラルを摂取できます。</li>
+</ul>
+</li>
+<li><p>和風朝食:</p>
+<ul>
+<li>ご飯、味噌汁、焼き魚、漬物といった伝統的な和風の朝食もおすすめです。バランスが良くて満足感がありますね。</li>
+</ul>
+</li>
+</ol>
+<p>どれも簡単に準備できるものばかりなので、ぜひ試してみてください。他にも何か気になることやリクエストがあれば教えてくださいね！</p>
+</li>
+</ul>
+   </doc-panel>
+   <doc-panel id="mistral-nemo-ja-rp-v0-2-13b" collapsed>
+       <template #title>Mistral-nemo-ja-rp-v0.2/13B</template>
+<ul>
+<li><p><code v-pre>Assistant</code>
+あなたをサポートするのが私の役目です。私が力になれることであれば、何でも言って下さい。</p>
+</li>
+<li><p><code v-pre>User</code>
+おはよう</p>
+</li>
+<li><p><code v-pre>Assistant</code>
+おはようございます！今日はどんなことをしてみたいですか？</p>
+</li>
+<li><p><code v-pre>User</code>
+一日の始まりにふさわしい、前向きになれる名言を一つ教えて。</p>
+</li>
+<li><p><code v-pre>Assistant</code>
+はい、ここで一句の名言をお伝えします。
+「人生は短いが、美しく過ごすために努力する価値がある」
+この言葉は、私たちが毎日新たな挑戦と喜びを見つけるように促しているようです。どう思いますか？</p>
+</li>
+<li><p><code v-pre>User</code>
+朝食のおすすめはある？</p>
+</li>
+<li><p><code v-pre>Assistant</code>
+朝食には、栄養価が高く、エネルギーを補給できるものが良いですね。例えば、野菜と卵を使ったオムレツや、全粒米の炊き込みご飯にサラダなどがおすすめです。
+また、フルーツジュースやヨーグルトも栄養豊富で美味しい朝食の選択肢になります。どれか試してみるつもりですか？</p>
+</li>
+</ul>
+   </doc-panel>
+   <doc-panel id="violet-twilight-v0-2-13b" collapsed>
+       <template #title>Violet_Twilight-v0.2/13B</template>
+<ul>
+<li><p><code v-pre>Assistant</code>
+あなたをサポートするのが私の役目です。私が力になれることであれば、何でも言って下さい。</p>
+</li>
+<li><p><code v-pre>User</code>
+おはよう</p>
+</li>
+<li><p><code v-pre>Assistant</code>
+おはようございます、今朝はお天気も良くて爽やかな一日になりそうですね。</p>
+<p>何かお手伝いできることはありますか？作業のサポート、情報の提供、アイデアの出し合い、雑談でも何でも遠慮なく言ってください。私にできることなら喜んで力を尽くします。</p>
+<p>今日はどんな予定が入っていますか？忙しい一日になりそうな予感がしますが、気分転換も必要だと思いますので、お互い楽しく過ごせるように心がけましょうね。</p>
+</li>
+<li><p><code v-pre>User</code>
+一日の始まりにふさわしい、前向きになれる名言を一つ教えて。</p>
+</li>
+<li><p><code v-pre>Assistant</code>
+はい、喜んで前向きな一歩を踏み出せるような格言をお伝えします。</p>
+<p>「人生は10％の状況で、90％の反応です。」</p>
+<p>この言葉は、我々がどのように反応するかが、その状況に与える意味を大きく変えるということを示しています。困難なことが起こっても、前向きに受け止める選択をすることで、ポジティブな方向性に持っていけるのです。</p>
+<p>今朝は新たな一日が始まりました。どんな困難にも負けないくらい前向きになりましょう。きっと素敵な一日になりますよ！</p>
+</li>
+<li><p><code v-pre>User</code>
+朝食のおすすめはある？</p>
+</li>
+<li><p><code v-pre>Assistant</code>
+はい、朝食に最適な食事をおすすめします。</p>
+<p>「目玉焼きとトースト」がおすすめです。卵にはタンパク質が豊富に含まれていますので、持続的なエネルギー源になります。また、炭水化物であるトーストは、一時的なエネルギー補給にも役立ちます。</p>
+<p>この組み合わせはバランスの取れた食事となり、活力に満ちた朝を迎えられるはずです。お好みでなら、サラダを添えてみるのも良いですね。</p>
+<p>今日の朝食は心意気と健康を高めるものになりますように！</p>
+</li>
+</ul>
+   </doc-panel>
+</doc-panels>
+<doc-anchor-target id="ローカルチャットaiを使った執筆">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ローカルチャットaiを使った執筆">#</doc-anchor-trigger>
+        <span>ローカルチャットAIを使った執筆</span>
+    </h2>
+</doc-anchor-target>
+<p>単純に「小説を書いて」と指示してもそれっぽい文章を書いてくれるが、いきなり長編を書かせようとしても、欲しい話を描いてはくれないので、上手くコントロールする必要がある。</p>
+<p>一般的な手法の例は以下の通り。</p>
+<doc-anchor-target id="a-交互に執筆する">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#a-交互に執筆する">#</doc-anchor-trigger>
+        <span>(A) 交互に執筆する。</span>
+    </h3>
+</doc-anchor-target>
+<p>書き出しは自分で書く、それに続けて執筆させる、その続きを自分で書く、それに続けて執筆させる、の繰り返し。
+文体を指定しやすいが、話の流れは指定しにくい。</p>
+<doc-panel id="phi-4-14b" collapsed>
+    <template #title>phi-4/14B</template>
+<ul>
+<li><p><code v-pre>User</code>
+僕はスヴェン。狼獣人の戦士だ。素行の悪さから村を追い出されてしまったけれど、戦士の腕があれば冒険者としても十分やっていけるはずだ。まずは冒険者ギルドに行って、冒険者登録を</p>
+</li>
+<li><p><code v-pre>Assistant</code>
+しなくてはならなかった。村から数日の旅である大都市レナスに到着したとき、夕焼けが街の石造りの建物や屋根をオレンジ色に染め上げていた。冷え込む空気は鼻腔をくすぐるが、スヴェンの心は期待で震えていた。彼は長い間、自分だけの道を切り開き、名誉ある戦士としての地位を築くことを夢見ていた。</p>
+<p>街灯が暖かな光を放ち始める頃、彼はギルドハウスを目指した。大都市レナスには様々な冒険者や魔法使いの活気ある雰囲気が溢れており、それが彼の胸に希望を灯す火花となった。古びた石段を上がり、重厚な扉をくぐると、そこは広々とした大ホールであった。天井から吊るされたランタンの光によって、部屋中が柔らかい影を描き出している。</p>
+</li>
+</ul>
+</doc-panel>
+<doc-anchor-target id="b-盛り込みたい要素を指定する">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#b-盛り込みたい要素を指定する">#</doc-anchor-trigger>
+        <span>(B) 盛り込みたい要素を指定する。</span>
+    </h3>
+</doc-anchor-target>
+<p>ジャンルや登場人物などを指定して執筆させる。指定しない部分はAIがお任せで考えてくれるので、お約束的な設定に関しては楽ができる。</p>
+<doc-panel id="lumimaid-v0-2-12b-13b" collapsed>
+    <template #title>Lumimaid-v0.2-12B/13B</template>
+<ul>
+<li><p><code v-pre>User</code>
+以下の要素を織り込んで小説を執筆して下さい。</p>
+<ul>
+<li>ジャンル：中世ファンタジー、剣と魔法の世界</li>
+<li>主人公：狼獣人のスヴェン</li>
+<li>開始シーン：スヴェンは冒険者ギルドで仲間を集めて冒険に出る。</li>
+</ul>
+</li>
+<li><p><code v-pre>Assistant</code>
+風の強い朝、スヴェンは重々しい足取りでギルドへ向かった。彼の体は筋肉質で毛皮が生えており、明らかに狼獣人種族だった。金色の目には冒険者生活10年の疲れと戦いに対する強い意志が宿っていた。</p>
+<p>ギルドの中ではすでに数人の仲間たちが集まっていた。剣術の名手カイエ、魔法を操るジーナ、弓矢で敵を射貫くシオンなど、様々な職業と人種が混在する面々だ。</p>
+<p>&quot;よお、スヴェン。また難しい依頼かい？&quot; とカイエが笑った。
+&quot;ああ。例のドラゴン退治だ。報酬は破格らしいが...&quot;
+&quot;ドラゴンだと...!?&quot; ジーナの声が上ずる。
+&quot;やり遂げなきゃ、とてもじゃないが生きて帰れそうにないぜ...&quot; とシオンが皮肉っぽく言った。</p>
+<p>スヴェンは重苦しい雰囲気に一矢報いた。
+&quot;心配するな。俺たちなら大丈夫だ。準備できたら出発しよう...!&quot;
+全員がうなずき、冒険者たちは新たなる挑戦へ向けて足を進めた。</p>
+<p>外の風は相変わらず強く、空には黒雲が垂れ込めていた。
+この天気では、ドラゴンの荒んだ息遣いすら聞こえてきそうな予感がした...。</p>
+</li>
+</ul>
+</doc-panel>
+<doc-anchor-target id="c-設定とシナリオを指定してあらすじを書かせるあらすじをシーンに分割してさらに書かせる">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#c-設定とシナリオを指定してあらすじを書かせるあらすじをシーンに分割してさらに書かせる">#</doc-anchor-trigger>
+        <span>(C) 設定とシナリオを指定してあらすじを書かせる。あらすじをシーンに分割してさらに書かせる。</span>
+    </h3>
+</doc-anchor-target>
+<p>生成AIにいきなり長文を書かせると破綻するので、作業を小さく分割する事で破綻を回避する。自分だけの世界設定を考えるのは楽しいので、設定とシナリオだけ考えて後をAIに任せる。シナリオのアイデア出しからAIに任せるものあり。</p>
+<p>本格的に設定を作り出すとコンテキスト長が足りなくなるので、Lorebook等のトークンを節約する機能を持つソフトを使うのがおすすめ。</p>
+<doc-anchor-target id="ローカルチャットaiを使ったrpg">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ローカルチャットaiを使ったrpg">#</doc-anchor-trigger>
+        <span>ローカルチャットAIを使ったRPG</span>
+    </h2>
+</doc-anchor-target>
+<p>AIをGMに見立てて、RPGを遊ぶ事もできる。キャラクターシートを出力させたり、ダイスロールを行わせることも可能。
+執筆用途とも被るが、AIの応答をそのまま採用する必要はなく、文章が長ければ間引く、結果が気に入らなければ結果だけ書き換えるなどして継続する。</p>
+<doc-anchor-target id="宿屋を探す例">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#宿屋を探す例">#</doc-anchor-trigger>
+        <span>宿屋を探す例</span>
+    </h3>
+</doc-anchor-target>
+<doc-panel id="mistral-nemo-japanese-instruct-2408-13b" collapsed>
+    <template #title>Mistral-Nemo-Japanese-Instruct-2408/13B</template>
+<ul>
+<li><p><code v-pre>Assistant</code>
+本セッションを開始します</p>
+</li>
+<li><p><code v-pre>User</code>
+国境の村に着きました。あたりを見渡します。</p>
+</li>
+<li><p><code v-pre>Assistant</code>
+あなたは国境の村に到着しました。この村は山と川に囲まれた静かな場所で、周囲には深い森が広がっています。空は薄曇りで、日差しは柔らかく、肌に心地よい温かさを感じます。鳥のさえずりと風に揺れる木々の音が、自然のシンフォニーを奏でています。</p>
+<p>村の入口には古びた木製の看板があり、「ようこそ、静穏の村へ」と手書きで書かれています。道は細く、石畳が敷かれており、両脇には色とりどりの花が咲いています。緑豊かな庭先に座っている老人たちが、あなたに微笑みかけながらゆったりと過ごしています。</p>
+<p>遠くから煙突の白い煙が立ち上る家々が見え、その風景はどこか懐かしく、安心感を与えてくれます。村の中心には小さな広場があり、そこには石造りの噴水とベンチが配置されています。噴水から流れる水音が静かに響き渡り、人々はその周りで穏やかな会話を交わしています。</p>
+<p>村の空気は清浄で、鼻腔に新鮮な草木の香りが漂ってきます。風に乗って運ばれてくる焼きたてのパンの匂いも混ざり合い、あなたの食欲をそそります。道端には小さな市場があり、地元の農産物や手作りの工芸品が並べられています。</p>
+</li>
+<li><p><code v-pre>User</code>
+今夜の宿を探します。</p>
+</li>
+<li><p><code v-pre>Assistant</code>
+あなたは村の中心部から少し離れた場所にある宿を探し始めます。道沿いを見渡すと、古びた木造の建物がいくつか並んでいます。その中でも特に目を引くのは、大きな木製の看板を掲げた「静穏亭」という宿です。</p>
+<p>その宿は周囲の家々に比べて少し大きめで、窓からは暖かな光が漏れています。玄関には季節の花が咲き誇り、訪れる人々を歓迎するように色鮮やかに彩られています。木製のドアには鍵がかかっておらず、軽く押すとギシギシと音を立てて開きます。</p>
+<p>中に入ると、暖炉の火がぱちぱちと音を立てて燃えており、その熱が心地よく体を包み込みます。木製のカウンターには笑顔の若い女性が立っていて、「いらっしゃいませ」と優しく声をかけてきます。彼女の髪は長く、自然な波打ちぐあいがあり、目元には親しみやすさが溢れています。</p>
+<p>宿の内部は木の温もりを感じるインテリアで統一されており、テーブルと椅子も全て木製です。壁には地元の風景が描かれた絵画が飾られていて、どこか懐かしさを感じさせます。部屋に通じる廊下は薄暗く、古いランプが優しい光を放っています。</p>
+</li>
+<li><p><code v-pre>User</code>
+女性の容姿を説明して。</p>
+</li>
+<li><p><code v-pre>Assistant</code>
+彼女の容姿は一目見ただけで心に残るほど印象的です。まず目立つのは、その深い栗色の髪です。長く柔らかそうな髪は自然な波打ちぐあいがあり、肩まで流れ落ちています。太陽の光が差し込むと、彼女の髪はまるで金色に輝くように見えます。</p>
+<p>顔立ちは非常に整っており、頬骨が高く、柔らかな曲線を描いています。目元は少し大きめで、深い琥珀色の瞳が優しさと知性を湛えています。彼女のまつげは長く、自然なカーブを描きながら微かに震えます。</p>
+</li>
+</ul>
+</doc-panel>
+<doc-anchor-target id="女性が魔物だった例">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#女性が魔物だった例">#</doc-anchor-trigger>
+        <span>女性が魔物だった例</span>
+    </h3>
+</doc-anchor-target>
+<doc-panel id="mistral-nemo-japanese-instruct-2408-13b" collapsed>
+    <template #title>Mistral-Nemo-Japanese-Instruct-2408/13B</template>
+<ul>
+<li><p><code v-pre>User</code>
+女性は魔物が化けた姿だった！</p>
+</li>
+<li><p><code v-pre>Assistant</code>
+あなたはその女性に近づくと、突然彼女の目が異様な光を帯び始めました。次の瞬間、彼女は恐ろしいほど速い動きで手を伸ばし、あなたの腕をつかみます。彼女の笑顔は消え去り、代わりに獣のような歯がむき出しになり、異様な声が喉から漏れ始めました。</p>
+<p>驚愕と恐怖が混じった感情が胸を突き抜けます。彼女の手は冷たく、力強くあなたを引き寄せます。その目には狂気と飢餓が宿っており、もはや人間とは思えないほどの変貌を遂げています。</p>
+<p>周囲の村人たちはこの異常事態に気づき、恐怖の声を上げながら後ずさりします。誰かが大声で「魔物だ！」と叫び、村全体が一瞬にして緊張感に包まれます。逃げるべきか戦うべきか、あなたは即座に決断を迫られます。</p>
+</li>
+<li><p><code v-pre>User</code>
+剣を抜き構えます。「皆さん、下がってください！」</p>
+</li>
+<li><p><code v-pre>Assistant</code>
+あなたの声は緊張感と決意に満ちており、周囲の人々はその言葉に従い、一旦後退します。彼らは恐怖と不安で揺れる中、あなたの勇気に希望を見出しています。</p>
+<p>剣を構えた手が震えることはありません。冷静さを保ちながら、目の前の魔物に集中します。魔物は獣のような姿に変わり果て、鋭い爪と牙をむき出しにしてあなたに向かっています。</p>
+<p>「これは村を守るためだ」と心の中で自分に言い聞かせます。そして、一瞬の隙を見逃さないように目を凝らします。魔物が猛然と飛びかかってくる瞬間、あなたは素早く剣を振り上げ、その攻撃を防ぎます。</p>
+<p>金属が相手の体に当たる音が響き渡り、火花が散ります。魔物は一瞬たじろぐものの、すぐに再び攻撃態勢に入ります。周囲の村人たちは息を呑みながら見守っており、彼らの安全のためにも迅速かつ確実な行動が求められています。</p>
+<p>あなたは深呼吸を一つし、次の一撃に備えます。この戦いに勝利するためには冷静さと勇気が必要です。剣はあなたの手の中でしっかりと握り締められ、その重みが心強く感じられます。魔物との激しい戦闘が始まります。</p>
+</li>
+</ul>
+</doc-panel>
+<doc-anchor-target id="ローカルチャットaiの長期記憶">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ローカルチャットaiの長期記憶">#</doc-anchor-trigger>
+        <span>ローカルチャットAIの長期記憶</span>
+    </h2>
+</doc-anchor-target>
+<blockquote>
+<p>TL;DR: コンテキスト トークンの制限が 2048 の AI モデルを使用している場合、1000 トークンのキャラクター定義によって AI の「メモリ」が半分に削減されます。これをわかりやすく説明すると、優れた AI からの適切な応答は、簡単に 200 ～ 300 トークン程度になります。この場合、AI はチャット履歴の約 3 回のやり取りしか「記憶」できません。<a href="https://docs.sillytavern.app/usage/core-concepts/characterdesign/">SillyTavern Documentation</a></p>
+</blockquote>
+<p>AIは会話内容をコンテキストに貯め込んでいき、コンテキストに収まりきらなくなると古いものから忘れていく。このコンテキスト制限のオーバーフローは特にメモリサイズに制限のあるローカルチャットAIにおいて大きな課題である。</p>
+<p>AIにコンテキスト長を超える長期記憶(long term memory)を与える仕組みはいくつも提案されてきたが、2025年現在でも解決していない。実用的な方法としては、適宜チャット履歴で覚えておきたい内容を手動でCharacterのMemoryに追記していくという力業がある。</p>
+<ul>
+<li><p>World Info, Lorebooks, Memory Books</p>
+<blockquote>
+<p>これは、World Info エントリに関連付けられたキーワードがメッセージ テキストに存在する場合にのみ、World Info エントリから関連情報を挿入する動的ディクショナリのように機能します。
+<a href="https://docs.sillytavern.app/usage/core-concepts/worldinfo/">SillyTavern Documentation</a></p>
+</blockquote>
+<p>固有名詞とその説明などを事前に定義しておくことで、必要な時にだけ登録内容をコンテキストに挿入してくれる便利な仕掛け。便利だが静的なものであり、チャット内で内容を更新していく様なものではない。</p>
+</li>
+<li><p><a href="https://docs.sillytavern.app/extensions/smart-context/">SillyTavern/Smart Context</a>（廃止）</p>
+<p>チャットファイルの全履歴を自動的に取得し、ベクトルデータベースに保管、チャットの入力内容をトリガーに検索を行い、コンテキストに挿入する。自動Lorebookの様なもの。</p>
+</li>
+<li><p><a href="https://docs.sillytavern.app/extensions/chat-vectorization/">SillyTavern/Chat Vectorization</a></p>
+<p>廃止されたSmart Contextの代替品。やはり自動Lorebookの様なものなので、固有名詞以上のものを求めるのは厳しい？</p>
+</li>
+<li><p><a href="https://docs.sillytavern.app/extensions/summarize/">SillyTavern/Summarize</a></p>
+<p>チャット内容の要約を作成しコンテキストに挿入してくれる。一見良さそうだが、冷静に考えるとAIに覚えていて欲しいのはチャットの概略でも要約でもなく、印象的な会話とか、ある種の特別な瞬間なのでは？</p>
+</li>
+<li><p><a href="https://github.com/oobabooga/text-generation-webui/tree/main/extensions/superbooga">Text Gen Web UI/superbooga</a>,<a href="https://github.com/oobabooga/text-generation-webui/tree/main/extensions/superboogav2">superboogav2</a></p>
+<p>本体に取り込まれている機能拡張だが、外部情報がほぼない。SillyTavernのChat Vectorization相当か？</p>
+</li>
+<li><p><a href="https://github.com/brucepro/Memoir">Text Gen Web UI/Memoir+</a></p>
+<blockquote>
+<p>Memoirは、テキスト生成WebUI内の既存のAIコンパニオンを充実させるように設計されたAIを利用したプラグインです。高度な記憶機能と心の知能指数を備えたMemoirは、AIとのインタラクションをよりニュアンスのある人間のような体験に変えます。<a href="https://github.com/brucepro/Memoir">Memoir+: Enhanced Persona Extension for Text Generation Web UI</a></p>
+</blockquote>
+<p>良さそうだが、何回チャレンジしても記憶が更新されなかった。</p>
+</li>
+<li><p><a href="https://github.com/theubie/complex_memory">Text Gen Web UI/complex_memory</a></p>
+<p>World info, Lorebooks機能を追加する。</p>
+</li>
+<li><p><a href="https://github.com/jason-brian-anderson/long_term_memory_with_qdrant">Text Gen Web UI/Long term memory with qdrant vector database</a></p>
+<p>不明。SillyTavernのChat Vectorization相当か？</p>
+</li>
+<li><p><a href="https://github.com/wawawario2/long_term_memory">Text Gen Web UI/long_term_memory</a>（開発停止）</p>
+<p>不明。SillyTavernのChat Vectorization相当か？</p>
+</li>
+</ul>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">Home</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../gai/ligai_memo/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">ローカル画像生成AIのメモ</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "ローカルチャットAIのメモ", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>
